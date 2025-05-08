@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import UserProfile from './components/UserProfile';
 
 function App() {
   const [username, setUsername] = useState('');
@@ -17,6 +18,7 @@ function App() {
           {/* UserProfile................. */}
           <div className="w-full lg:w-1/3">
             <h2>UserProfile</h2>
+            <UserProfile username={username} />
           </div>
           {/* Repositories................. */}
           <div className="w-full lg:w-2/3">
