@@ -1,9 +1,16 @@
 import { FaGithub, FaSearch,  FaUser } from 'react-icons/fa';
-import { useState,  } from 'react';
+import { useEffect, useState,  } from 'react';
 import ThemeToggle from './ThemeToggle';
+import useDebounce from '../hooks/useDebounce';
 
-const Navbar = ({ username }) => {
+const Navbar = ({ user, setUsername }) => {
+
   const [searchQuery, setSearchQuery] = useState('');
+  const debouncedSearch = useDebounce(searchQuery, 500);
+
+  useEffect(() => {
+    setUsername(debouncedSearch);
+  }, [debouncedSearch, setUsername]);
 
   return (
     <nav className="bg-white dark:bg-gray-800 shadow-md ">
@@ -22,7 +29,7 @@ const Navbar = ({ username }) => {
             </div>
             <input
               type="text"
-              className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md bg-white dark:bg-gray-700 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 dark:text-white"
+              className="block w-full pl-10 pr-3 py-2 text-black dark:text-white border border-gray-300 rounded-md bg-white dark:bg-gray-700 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-gray-400"
               placeholder="Search GitHub username..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -37,10 +44,10 @@ const Navbar = ({ username }) => {
           <ThemeToggle></ThemeToggle>
 
           {/* User avatar....................... */}
-          {username?.avatar_url ? (
+          {user?.avatar_url ? (
             <img
-              src={username?.avatar_url}
-              alt={username.login}
+              src={user?.avatar_url}
+              alt={user.login}
               className="w-8 h-8 rounded-full"
             />
           ) : (
