@@ -11,6 +11,11 @@ const UserInfo = () => {
         <LoadingSpinner></LoadingSpinner>
     }
 
+    //   for user stats ( code optimization)............................
+    const itemClass = "flex flex-col items-center text-center";
+    const iconClass = "text-xl text-gray-700 dark:text-white";
+    const labelClass = "text-sm text-gray-600 dark:text-gray-400";
+    const valueClass = "font-bold text-gray-800 dark:text-white";
     return (
         <div className='bg-white dark:bg-gray-800 rounded-lg shadow-md p-6'>
             <div className="flex flex-col items-center">
@@ -47,22 +52,22 @@ const UserInfo = () => {
                     )}
 
 
-                 {/* user stats..................................... */}
+                    {/* user stats..................................... */}
                     <div className="flex flex-col md:flex-row items-center justify-between mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 gap-4">
-                        <div className="flex flex-col items-center text-center">
-                            <FaBook className="text-xl text-gray-700 dark:text-white" />
-                            <div className="text-sm text-gray-600 dark:text-gray-400">Repositories</div>
-                            <div className="font-bold text-gray-800 dark:text-white">{user?.public_repos}</div>
+                        <div className={itemClass}>
+                            <FaBook className={iconClass} />
+                            <div className={labelClass}>Repositories</div>
+                            <div className={valueClass}>{user?.public_repos}</div>
                         </div>
-                        <div className="flex flex-col items-center text-center">
-                            <FaUsers className="text-xl text-gray-700 dark:text-white" />
-                            <div className="text-sm text-gray-600 dark:text-gray-400">Followers</div>
-                            <div className="font-bold text-gray-800 dark:text-white">{user?.followers}</div>
+                        <div className={itemClass}>
+                            <FaUsers className={iconClass} />
+                            <div className={labelClass}>Followers</div>
+                            <div className={valueClass}>{user?.followers}</div>
                         </div>
-                        <div className="flex flex-col items-center text-center">
-                            <FaUserPlus className="text-xl text-gray-700 dark:text-white" />
-                            <div className="text-sm text-gray-600 dark:text-gray-400">Following</div>
-                            <div className="font-bold text-gray-800 dark:text-white">{user?.following}</div>
+                        <div className={itemClass}>
+                            <FaUserPlus className={iconClass} />
+                            <div className={labelClass}>Following</div>
+                            <div className={valueClass}>{user?.following}</div>
                         </div>
                     </div>
                 </div>
