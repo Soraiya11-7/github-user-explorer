@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import UserProfile from './components/UserProfile';
 import { Toaster } from 'react-hot-toast';
 import useGitHubUser from './hooks/useGitHubUser';
+import Repositories from './components/Repositories';
 
 function App() {
   const [username, setUsername] = useState('');
@@ -25,7 +26,7 @@ function App() {
           </div>
           {/* Repositories................. */}
           <div className="w-full lg:w-3/5">
-            <h2>Repositories</h2>
+          <Repositories username={username} />
           </div>
         </div>
       </main>

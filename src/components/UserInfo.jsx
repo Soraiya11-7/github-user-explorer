@@ -38,7 +38,7 @@ const UserInfo = ({ user, loading }) => {
                 <div className="w-full space-y-3">
 
                     {/* user stats..................................... */}
-                    <div className="flex flex-col sm:flex-row items-center justify-between mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 gap-4 w-full">
+                    <div className="flex flex-col sm:flex-row items-center justify-center mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 gap-4 w-full">
                         <div className={itemClass}>
                             <FaBook className={iconClass} />
                             <div className={labelClass}>Repositories</div>
