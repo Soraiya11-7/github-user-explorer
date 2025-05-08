@@ -1,11 +1,12 @@
 
 import LoadingSpinner from './LoadingSpinner';
 import useGitHubRepos from '../hooks/useGitHubRepos';
+import RepositoryCard from './repo/RepositoryCard';
 
 const Repositories = ({ username }) => {
 
     const { repos, loading, error } = useGitHubRepos(username, 1, 10);
-//    console.log(repos);
+    //    console.log(repos);
 
     if (!username) {
         return (
@@ -40,7 +41,7 @@ const Repositories = ({ username }) => {
     }
 
     return (
-        <div className="mt-5 ">
+        <div className="pt-2 pb-8  ">
             <div className="flex justify-between items-center mb-6">
                 <h3 className="text-xl font-bold text-gray-800 dark:text-white">
                     Repositories
@@ -59,7 +60,12 @@ const Repositories = ({ username }) => {
                 (
                     // Repo Card.........................
                     <div className="space-y-4">
-                        <h2>Repo Card...</h2>
+                        {repos.map(repo => (
+                            <RepositoryCard
+                                key={repo.id}
+                                repo={repo}
+                            />
+                        ))}
                     </div>
                 )}
         </div>

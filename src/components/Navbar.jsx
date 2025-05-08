@@ -48,10 +48,10 @@ const Navbar = ({ user, setUsername }) => {
             <img
               src={user?.avatar_url}
               alt={user.login}
-              className="w-8 h-8 rounded-full"
+              className="w-8 h-8 rounded-full dark:border dark:border-white"
             />
           ) : (
-            <div className="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-600 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-600 flex items-center justify-center dark:border dark:border-white">
               <FaUser className="text-gray-600 dark:text-gray-300" />
             </div>
           )}
