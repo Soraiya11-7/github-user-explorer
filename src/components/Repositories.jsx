@@ -40,7 +40,7 @@ const Repositories = ({ username, userError }) => {
 
   if (!username) {
     return (
-      <div className="flex items-center justify-center mt-3 md:min-h-screen">
+      <div className="flex items-center justify-center mt-3 md:min-h-[calc(100vh-140px)]">
         <div className="text-center">
           <h3 className="text-lg font-medium text-gray-800 dark:text-white mb-2">
             Search for a GitHub username
@@ -55,13 +55,13 @@ const Repositories = ({ username, userError }) => {
 
   if (userError?.response?.status === 404) {
     return (
-      <div className="flex items-center justify-center mt-3 md:min-h-screen">
+      <div className="flex items-center justify-center mt-3 md:min-h-[calc(100vh-140px)]">
         <div className="text-center">
           <h3 className="text-lg font-medium text-gray-800 dark:text-white mb-2">
             User not found
           </h3>
           <p className="text-gray-600 dark:text-gray-400">
-            The username "{username}" doesn't exist on GitHub
+            The username doesn't exist on GitHub
           </p>
         </div>
       </div>
@@ -70,7 +70,7 @@ const Repositories = ({ username, userError }) => {
 
   if (error) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
+      <div className="flex items-center justify-center mt-3 md:min-h-[calc(100vh-140px)]">
         <div className="text-center">
           <h3 className="text-lg font-medium text-gray-800 dark:text-white mb-2">
             Error loading repositories
