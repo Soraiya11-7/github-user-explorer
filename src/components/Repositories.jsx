@@ -40,7 +40,7 @@ const Repositories = ({ username, userError }) => {
 
   if (!username) {
     return (
-      <div className="flex items-center justify-center mt-2 md:min-h-screen">
+      <div className="flex items-center justify-center mt-3 md:min-h-screen">
         <div className="text-center">
           <h3 className="text-lg font-medium text-gray-800 dark:text-white mb-2">
             Search for a GitHub username
@@ -55,7 +55,7 @@ const Repositories = ({ username, userError }) => {
 
   if (userError?.response?.status === 404) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
+      <div className="flex items-center justify-center mt-3 md:min-h-screen">
         <div className="text-center">
           <h3 className="text-lg font-medium text-gray-800 dark:text-white mb-2">
             User not found
@@ -86,7 +86,7 @@ const Repositories = ({ username, userError }) => {
   }
 
   return (
-    <div className="pt-2 pb-8">
+    <div className="pt-2 pb-4 md:pb-8">
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-lg md:text-xl font-bold text-gray-800 dark:text-white">
           Repositories
