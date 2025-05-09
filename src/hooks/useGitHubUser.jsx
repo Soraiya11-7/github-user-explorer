@@ -27,7 +27,10 @@ export default function useGitHubUser(username) {
         setError(err);
         if (err.response?.status === 404) {
           toast.error('User not found');
-        } else {
+        }else if (err.response?.status === 403){
+          toast.error("API rate limit exceeded. Please try again later")
+        }
+         else {
           toast.error('Error fetching user');
         }
       } finally {

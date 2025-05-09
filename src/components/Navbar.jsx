@@ -13,7 +13,7 @@ const Navbar = ({ user, setUsername }) => {
   }, [debouncedSearch, setUsername]);
 
   return (
-    <nav className="bg-white dark:bg-gray-800 shadow-md ">
+    <nav className="bg-white dark:bg-gray-800 w-full shadow-md sticky top-0 z-50 ">
    <div className="w-[90%] mx-auto container text-white py-4 flex flex-row items-center justify-between">
         {/* Left side - (logo + name)............................ */}
         <div className="flex items-center space-x-2">

@@ -13,7 +13,10 @@ const RepositoryCard = ({ repo }) => {
       };
 
   return (
-    <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:shadow-md transition-shadow">
+    <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:shadow-md transition-shadow dark:hover:shadow-lg 
+  hover:shadow-gray-200 dark:hover:shadow-gray-800
+   duration-200 ease-in-out
+  transform hover:scale-[1.005]">
       <div className="flex justify-between items-start">
         <div>
           <h4 className="font-bold text-base sm:text-lg text-blue-500 dark:text-blue-400 mb-1">
@@ -29,7 +32,7 @@ const RepositoryCard = ({ repo }) => {
             </a>
           </h4>
           {repo?.description && (
-            <p className="text-gray-600 dark:text-gray-400 mb-3 text-sm sm:text-base">{repo?.description}</p>
+            <p className="text-gray-600 dark:text-gray-400 mb-3 text-xs sm:text-sm md:text-base">{repo?.description}</p>
           )}
         </div>
       </div>

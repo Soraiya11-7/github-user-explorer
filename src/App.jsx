@@ -8,7 +8,7 @@ import Repositories from './components/Repositories';
 
 function App() {
   const [username, setUsername] = useState('');
-  const { user, loading } = useGitHubUser(username);
+  const { user, loading, error: userError } = useGitHubUser(username);
 
   return (
     <>
@@ -24,7 +24,7 @@ function App() {
 
           {/* Repositories................. */}
           <div className="w-full lg:w-3/5">
-            <Repositories username={username} />
+            <Repositories username={username} userError={userError} />
           </div>
 
         </div>
